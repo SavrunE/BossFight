@@ -47,8 +47,7 @@ MonoBehaviour:
   offset: 0
   bullet: {fileID: 4053687617975581444, guid: 8b2489de707af1e4f9cff5d39ee5f841, type: 3}
   direction: {fileID: 229874981972411744}
-  delayToAttack: 0
-  startTime: 0
+  delayToAttack: 0.48
   bulletSpeed: 500
 --- !u!1 &4755181810426304454
 GameObject:

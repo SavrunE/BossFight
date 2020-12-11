@@ -129,7 +129,7 @@ MonoBehaviour:
   offset: 0
   bullet: {fileID: 4053687617975581444, guid: 8b2489de707af1e4f9cff5d39ee5f841, type: 3}
   direction: {fileID: 2741421222761301834}
-  delayToAttack: 0
+  delayToAttack: 1
   startTime: 0
   bulletSpeed: 1000
 --- !u!1 &4755181810426304454

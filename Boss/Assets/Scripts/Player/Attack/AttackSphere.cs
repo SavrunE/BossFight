@@ -13,8 +13,4 @@ public class AttackSphere : MonoBehaviour
             Debug.Log("S");
         }
     }
-    private void Update()
-    {
-        //transform.GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed, ForceMode2D.Impulse);
-    }
 }
