@@ -11,12 +11,4 @@ public class AttackSphere : MonoBehaviour
             Debug.Log("S");
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
-        {
-
-            Debug.Log("Ssd");
-        }
-    }
 }

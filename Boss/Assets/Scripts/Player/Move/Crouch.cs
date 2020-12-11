@@ -8,7 +8,7 @@ public class Crouch : MonoBehaviour
     [SerializeField] private float croucherGravitiScale;
     [Range(0.3f, 0.9f)]
     [SerializeField] private float multuiplierYScale;
-    [SerializeField] private float defaultYScale;
+    private float defaultYScale;
 
     private float newYScale;
 
