@@ -26,9 +26,9 @@ public class Crouch : MonoBehaviour
     public void ChangeTransformY()
     {
         transform.localScale = new Vector3(transform.localScale.x, newYScale, transform.localScale.z);
-        transform.position = new Vector3(transform.position.x, transform.position.y - defaultYScale / 2f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y - defaultYScale / 2f + newYScale / 2f, transform.position.z);
     }
-    public void ReturnTransform()
+    public void ReturnTransformY()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y + defaultYScale / 2f - newYScale / 2f, transform.position.z);
         transform.localScale = new Vector3(transform.localScale.x, defaultYScale, transform.localScale.z);

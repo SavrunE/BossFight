@@ -62,7 +62,7 @@ public class Mover : MonoBehaviour
     private void ReturnToDefaultSettings()
     {
         ReturnGravity();
-        crouch.ReturnTransform();
+        crouch.ReturnTransformY();
     }
     private bool CheckGround()
     {
