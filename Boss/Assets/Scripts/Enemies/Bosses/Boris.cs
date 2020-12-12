@@ -13,10 +13,10 @@ public class Boris : Boss
             RunAttack(target);
         }
     }
-    public void SetTarget(GameObject target)
-    {
+    //public void SetTarget(GameObject target)
+    //{
 
-    }
+    //}
     public void RunAttack(GameObject target)
     {
         print("DamageAttack");

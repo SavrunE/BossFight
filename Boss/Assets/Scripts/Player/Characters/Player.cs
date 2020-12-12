@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -8,13 +9,14 @@ public class Player : MonoBehaviour
     private int i = 0;
     private bool selector;
 
-    private void Start()
+    public event UnityAction<PlayerVariant> CharacterChanged;
+    private void Awake()
     {
         characters = new List<PlayerVariant>();
         selector = true;
         for (i = 0; i < Characters.Length; i++)
         {
-            PlayerVariant character = Instantiate(Characters[i], transform.position, Quaternion.identity);
+            PlayerVariant character = Instantiate(Characters[i], transform.position, Quaternion.identity, gameObject.transform);
             character.gameObject.SetActive(false);
             characters.Add(character);
         }
@@ -34,11 +36,13 @@ public class Player : MonoBehaviour
         {
             characters[0].transform.position = characters[1].transform.position;
             ChangerEneble();
+            CharacterChanged?.Invoke(characters[0]);
         }
         else
         {
             characters[1].transform.position = characters[0].transform.position;
             ChangerEneble();
+            CharacterChanged?.Invoke(characters[1]);
         }
     }
     private void ChangerEneble()

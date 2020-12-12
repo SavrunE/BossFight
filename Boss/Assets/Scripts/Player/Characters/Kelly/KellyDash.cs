@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class KellyDash : MonoBehaviour
+public class KellyDash : Spell
 {
     [SerializeField] private float dashDistance;
     [Range(0.1f, 2f)]
@@ -12,7 +12,6 @@ public class KellyDash : MonoBehaviour
     [SerializeField] private TriggerCheck dashTrigger;
     private Mover mover;
 
-    //public event UnityAction<GameObject> OnDashTriggerEnemy;
     private void Start()
     {
         canDash = true;
@@ -22,6 +21,7 @@ public class KellyDash : MonoBehaviour
     {
         if (canDash && Input.GetKeyDown(KeyCode.E))
         {
+            ExpenditureStamina();
             StartCoroutine(DashDelayTimer());
             if (mover.LookOnLeft)
             {

@@ -44,7 +44,6 @@ public class Mover : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             jump.Jumper(body, CheckGround());
-            //StartCoroutine(ScaleOnJump());
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
@@ -55,12 +54,6 @@ public class Mover : MonoBehaviour
             ReturnToDefaultSettings();
         }
     }
-    private IEnumerator ScaleOnJump()
-    {
-        crouch.ChangeTransformY();
-        yield return null;
-        ReturnToDefaultSettings();
-    }
     private void ReturnToDefaultSettings()
     {
         ReturnGravity();
@@ -68,7 +61,7 @@ public class Mover : MonoBehaviour
     }
     private bool CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheker.position, 0.5f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheker.position, 0.2f);
         return colliders.Length > 1;
     }
     public void ReturnGravity()
