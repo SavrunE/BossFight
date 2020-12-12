@@ -10,7 +10,7 @@ public class AttackSphere : MonoBehaviour
     {
         if (collision.TryGetComponent<Enemy>(out Enemy enemy))
         {
-            Debug.Log("S");
+            //Debug.Log("S");
         }
     }
 }

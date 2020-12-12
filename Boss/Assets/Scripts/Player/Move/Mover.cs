@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Mover : MonoBehaviour
 {
+    public bool LookOnLeft = false;
+
     [SerializeField] private float moveSpeed;
     [SerializeField] Transform groundCheker;
 
@@ -76,6 +78,13 @@ public class Mover : MonoBehaviour
     private void Move()
     {
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime, body.velocity.y);
+        if (LookOnLeft == true && body.velocity.x > 0)
+            Flip();
+        else if (LookOnLeft == false && body.velocity.x < 0)
+            Flip();
     }
-
+    private void Flip()
+    {
+        LookOnLeft = !LookOnLeft;
+    }
 }
