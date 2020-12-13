@@ -9,11 +9,9 @@ public class Spell : MonoBehaviour
     [SerializeField] protected float Delay;
     [SerializeField] private float staminaCost;
 
-    protected bool canUseSpell;
     public event UnityAction<float> StaminaChanged;
     private void Start()
     {
-        canUseSpell = true;
     }
     public void ExpenditureStamina()
     {

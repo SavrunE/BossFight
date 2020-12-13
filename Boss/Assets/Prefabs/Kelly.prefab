@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964d0272e5aabf84fa809bb33a158be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delay: 0
   staminaCost: 10
 --- !u!1 &4755181810426304454
 GameObject:
@@ -161,6 +162,7 @@ GameObject:
   - component: {fileID: 4755181810426304511}
   - component: {fileID: 8051588566576300862}
   - component: {fileID: 3817195575901631925}
+  - component: {fileID: 7539448999804072150}
   m_Layer: 0
   m_Name: Kelly
   m_TagString: Untagged
@@ -351,11 +353,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102856592482486448dd896abac32897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delay: 0.1
   staminaCost: 50
   dashDistance: 10
-  dashDelay: 0.68
-  canDash: 0
   dashTrigger: {fileID: 6492527357094048942}
+--- !u!114 &7539448999804072150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4755181810426304454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ced8144e640104aaf0c336f92d3366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4755181811646330249
 GameObject:
   m_ObjectHideFlags: 0

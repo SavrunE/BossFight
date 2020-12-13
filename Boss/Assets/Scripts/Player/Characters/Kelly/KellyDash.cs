@@ -8,9 +8,11 @@ public class KellyDash : Spell
     [SerializeField] private float dashDistance;
     [SerializeField] private TriggerCheck dashTrigger;
     private Mover mover;
+    private bool canUseSpell;
 
     private void Start()
     {
+        canUseSpell = true;
         mover = GetComponent<Mover>();
     }
     void Update()
