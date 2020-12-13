@@ -6,20 +6,16 @@ using UnityEngine.Events;
 public class KellyDash : Spell
 {
     [SerializeField] private float dashDistance;
-    [Range(0.1f, 2f)]
-    [SerializeField] private float dashDelay;
-    [SerializeField] private bool canDash;
     [SerializeField] private TriggerCheck dashTrigger;
     private Mover mover;
 
     private void Start()
     {
-        canDash = true;
         mover = GetComponent<Mover>();
     }
     void Update()
     {
-        if (canDash && Input.GetKeyDown(KeyCode.E))
+        if (canUseSpell && Input.GetKeyDown(KeyCode.E))
         {
             ExpenditureStamina();
             StartCoroutine(DashDelayTimer());
@@ -35,9 +31,9 @@ public class KellyDash : Spell
     }
     private IEnumerator DashDelayTimer()
     {
-        canDash = false;
-        yield return new WaitForSeconds(dashDelay);
-        canDash = true;
+        canUseSpell = false;
+        yield return new WaitForSeconds(Delay);
+        canUseSpell = true;
     }
 
     private void Dash(int direction)

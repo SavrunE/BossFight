@@ -5,11 +5,18 @@ using UnityEngine.Events;
 
 public class Spell : MonoBehaviour
 {
-    [SerializeField] private float staminaCost; 
-    public event UnityAction<float> StaminaChanged;
+    [Range(0.1f, 2f)]
+    [SerializeField] protected float Delay;
+    [SerializeField] private float staminaCost;
 
+    protected bool canUseSpell;
+    public event UnityAction<float> StaminaChanged;
+    private void Start()
+    {
+        canUseSpell = true;
+    }
     public void ExpenditureStamina()
     {
-        StaminaChanged?.Invoke(staminaCost);
+        StaminaChanged?.Invoke(-staminaCost);
     }
 }

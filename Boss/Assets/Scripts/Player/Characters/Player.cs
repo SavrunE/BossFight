@@ -4,7 +4,6 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public PlayerVariant[] Characters;
     private List<PlayerVariant> characters;
     private int i = 0;
     private bool selector;
@@ -14,11 +13,11 @@ public class Player : MonoBehaviour
     {
         characters = new List<PlayerVariant>();
         selector = true;
-        for (i = 0; i < Characters.Length; i++)
+
+        var foundCanvasObjects = FindObjectsOfType<PlayerVariant>();
+        for (i = 0; i < foundCanvasObjects.Length; i++)
         {
-            PlayerVariant character = Instantiate(Characters[i], transform.position, Quaternion.identity, gameObject.transform);
-            character.gameObject.SetActive(false);
-            characters.Add(character);
+            characters.Add(foundCanvasObjects[i]);
         }
         Enabler(selector);
     }

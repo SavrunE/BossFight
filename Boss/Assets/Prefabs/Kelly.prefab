@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2556975764997269754}
   - component: {fileID: 8570287546639556607}
+  - component: {fileID: 661439552786954403}
   m_Layer: 0
   m_Name: AttackDirection
   m_TagString: Untagged
@@ -130,6 +131,19 @@ MonoBehaviour:
   delayToAttack: 0.48
   bullet: {fileID: 4053687617975581444, guid: 8b2489de707af1e4f9cff5d39ee5f841, type: 3}
   bulletSpeed: 1000
+--- !u!114 &661439552786954403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2200124350864066767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964d0272e5aabf84fa809bb33a158be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaCost: 10
 --- !u!1 &4755181810426304454
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102856592482486448dd896abac32897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staminaCost: -50
+  staminaCost: 50
   dashDistance: 10
   dashDelay: 0.68
   canDash: 0
