@@ -10,6 +10,7 @@ public class EnemiesBullet : MonoBehaviour
         if (collision.gameObject.TryGetComponent<PlayerVariant>(out PlayerVariant player))
         {
             player.GetComponent<HP>().TakeDamage(damage);
+            Destroy(this.gameObject);
         }
     }
 }

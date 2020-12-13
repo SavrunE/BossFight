@@ -6,16 +6,25 @@ using UnityEngine;
 public class AttackSphere : MonoBehaviour
 {
     [SerializeField] private float damage;
+    [SerializeField] private bool canBeDestroyed;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Enemy>(out Enemy enemy))
         {
-            Debug.Log("Attack enemy " + damage);
+            enemy.SetDamage(damage);
+            if (canBeDestroyed)
+            {
+                Destroy(this.gameObject);
+            }
         }
-        if(collision.TryGetComponent<EnemiesBullet>(out EnemiesBullet enemyBullet))
-        {
-            Destroy(this.gameObject);
-            Destroy(enemyBullet.gameObject);
-        }
+        //if(collision.TryGetComponent<EnemiesBullet>(out EnemiesBullet enemyBullet))
+        //{
+        //    Destroy(enemyBullet.gameObject);
+
+        //    if (canBeDestroyed)
+        //    {
+        //        Destroy(this.gameObject);
+        //    }
+        //}
     }
 }

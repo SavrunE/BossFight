@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HP : MonoBehaviour
 {
+    public bool CanTakeDamage;
     [SerializeField] private float maxHP;
     [SerializeField] private float currentHP;
     [SerializeField] private float hPRecovery;
@@ -15,6 +16,7 @@ public class HP : MonoBehaviour
 
     private void Start()
     {
+        CanTakeDamage = true;
         hPdelegate = transform.parent.GetComponent<HPDelegate>();
         currentHP = maxHP;
         StartCoroutine(HPRecovery());
@@ -22,7 +24,10 @@ public class HP : MonoBehaviour
     }
     public void TakeDamage(float value)
     {
-        OnHPChanged(-value);
+        if (CanTakeDamage)
+        {
+            OnHPChanged(-value);
+        }
     }
     public void OnHPChanged(float value)
     {

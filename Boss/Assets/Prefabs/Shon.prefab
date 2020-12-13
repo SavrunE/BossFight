@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 4755181810426304511}
   - component: {fileID: 7805541359227023036}
   - component: {fileID: 1560232977}
-  - component: {fileID: 6699677103058110412}
+  - component: {fileID: 1560232985}
   m_Layer: 0
   m_Name: Shon
   m_TagString: Untagged
@@ -356,7 +356,7 @@ MonoBehaviour:
   staminaCost: 0
   shield: {fileID: 0}
   duration: 0
---- !u!114 &6699677103058110412
+--- !u!114 &1560232985
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -368,6 +368,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ced8144e640104aaf0c336f92d3366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHP: 100
+  currentHP: 0
+  hPRecovery: 1
 --- !u!1 &4755181811646330249
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4053687617975581446, guid: 373a252dedd46814ea3e8c451c43fae8, type: 3}
       propertyPath: m_SortingOrder
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4053687617975581447, guid: 373a252dedd46814ea3e8c451c43fae8, type: 3}
       propertyPath: m_RootOrder

@@ -34,7 +34,7 @@ public class KellyDash : Spell
     private IEnumerator DashDelayTimer()
     {
         canUseSpell = false;
-        yield return new WaitForSeconds(Delay);
+        yield return new WaitForSeconds(delay);
         canUseSpell = true;
     }
 

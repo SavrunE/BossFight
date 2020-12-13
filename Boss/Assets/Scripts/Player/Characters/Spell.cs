@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public class Spell : MonoBehaviour
 {
-    [Range(0.1f, 2f)]
-    [SerializeField] protected float Delay;
-    [SerializeField] private float staminaCost;
+    [Range(0.1f, 10f)]
+    [SerializeField] protected float delay;
+    [SerializeField] private float energyCost;
 
     public event UnityAction<float> StaminaChanged;
     private void Start()
@@ -15,6 +15,6 @@ public class Spell : MonoBehaviour
     }
     public void ExpenditureStamina()
     {
-        StaminaChanged?.Invoke(-staminaCost);
+        StaminaChanged?.Invoke(-energyCost);
     }
 }

@@ -10,6 +10,10 @@ public class Enemy : MonoBehaviour
     public void SetDamage(float damage)
     {
         HP -= damage;
+        if (HP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
     public void SetTarget(GameObject target)
     {
